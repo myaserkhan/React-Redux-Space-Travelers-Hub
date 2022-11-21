@@ -1,8 +1,9 @@
-import Header from "./components/Header";
+import Header from './components/Header';
+
 function App() {
   return (
     <div className="App">
-      <header />
+      <Header />
       <h1>Space Taverlers</h1>
     </div>
   );
