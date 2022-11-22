@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../images/planet.png';
-// import './stylesheets/Header.css';
+import './stylesheets/Header.css';
 
 const navLinkStyles = ({ isActive }) => ({
   fontWeight: isActive ? 'bold' : 'normal',
