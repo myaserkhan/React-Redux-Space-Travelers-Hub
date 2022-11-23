@@ -8,7 +8,7 @@ const initialState = [];
 const url = 'https://api.spacexdata.com/v3/rockets';
 
 // Async Action Creators
-const fetchRectketApi = createAsyncThunk(
+export const fetchRectketApi = createAsyncThunk(
   'rockets/fetchRectketApi',
   async () => {
     const response = await axios.get(url);
@@ -26,8 +26,8 @@ export const rocketSlice = createSlice({
       const rockets = action.payload.map((el) => ({
         rocketId: el.rocket_id,
         rocketName: el.rocket_name,
-        rocketDess: el.description,
-        rocketImg: el.flickr_images,
+        rocketDesc: el.description,
+        rocketImg: el.flickr_images[0],
       }));
       return rockets;
     },

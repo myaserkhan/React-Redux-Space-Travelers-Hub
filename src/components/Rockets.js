@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRectketApi } from '../redux/rockets/RocketsSlice';
+import RocketsCard from './RocketsCard';
 
-const Rockets = () => {
-  <div>Rockets</div>;
-};
+function RocketsList() {
+  const rockets = useSelector((state) => state.rockets);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchRectketApi());
+  }, [dispatch]);
 
-export default Rockets;
+  return (
+    <>
+      {rockets.map((rocket) => (
+        <RocketsCard key={rocket.rocketId} rocket={rocket} />
+      ))}
+    </>
+  );
+}
+
+export default RocketsList;
