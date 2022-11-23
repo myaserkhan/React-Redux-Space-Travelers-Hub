@@ -1,14 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { reserveRocket, cancelRocket } from '../redux/rockets/RocketsSlice';
 
 function RocketsCard({ rocket }) {
+  const dispatch = useDispatch();
   const {
     rocketId, rocketName, rocketDesc, rocketImg, rocketReserved,
   } = rocket;
 
-  const clickHandler = (e) => {
-    console.log(e.target.id);
+  const reserveHandler = (e) => {
+    const data = e.target.id;
+    dispatch(reserveRocket(data));
+  };
+
+  const cancelHandler = (e) => {
+    const data = e.target.id;
+    dispatch(cancelRocket(data));
   };
 
   return (
@@ -23,17 +32,25 @@ function RocketsCard({ rocket }) {
           {' '}
           {rocketDesc}
         </p>
-        { rocketReserved === true
-          ? (
-            <button className="cancelBtn" type="button" id={rocketId} onClick={clickHandler}>
-              Cancel Reservation
-            </button>
-          )
-          : (
-            <button className="reserveBtn" type="button" id={rocketId} onClick={clickHandler}>
-              Reserve Rocket
-            </button>
-          )}
+        {rocketReserved === true ? (
+          <button
+            className="cancelBtn"
+            type="button"
+            id={rocketId}
+            onClick={cancelHandler}
+          >
+            Cancel Reservation
+          </button>
+        ) : (
+          <button
+            className="reserveBtn"
+            type="button"
+            id={rocketId}
+            onClick={reserveHandler}
+          >
+            Reserve Rocket
+          </button>
+        )}
       </div>
     </section>
   );

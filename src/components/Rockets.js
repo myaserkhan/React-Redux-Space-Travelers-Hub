@@ -7,7 +7,7 @@ function RocketsList() {
   const rockets = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchRectketApi());
+    if (!rockets.length) dispatch(fetchRectketApi());
   }, [dispatch]);
 
   return (

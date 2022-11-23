@@ -17,10 +17,27 @@ export const fetchRectketApi = createAsyncThunk(
 );
 
 // Slice Reducer
-export const rocketSlice = createSlice({
+const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
-  reducers: {},
+  reducers: {
+    reserveRocket: {
+      reducer: (state, action) => state.map((el) => (
+        el.rocketId === action.payload ? { ...el, rocketReserved: true } : el)),
+      prepare: (rocketId) => ({
+        payload: rocketId,
+      }),
+    },
+
+    cancelRocket: {
+      reducer: (state, action) => state.map((el) => (
+        el.rocketId === action.payload ? { ...el, rocketReserved: false } : el)),
+      prepare: (rocketId) => ({
+        payload: rocketId,
+      }),
+    },
+  },
+
   extraReducers: {
     [fetchRectketApi.fulfilled]: (state, action) => {
       const rockets = action.payload.map((el) => ({
@@ -34,5 +51,7 @@ export const rocketSlice = createSlice({
     },
   },
 });
+
+export const { reserveRocket, cancelRocket } = rocketSlice.actions;
 
 export default rocketSlice.reducer;
