@@ -1,0 +1,68 @@
+.mission-card {
+  width: 98vw;
+  border: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.mission {
+  margin: 0 auto;
+}
+
+.heading {
+  width: 98vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.tbody {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(185, 184, 184);
+}
+
+.left {
+  display: flex;
+  flex: 0.15;
+  justify-content: center;
+  border: 1px solid rgb(185, 184, 184);
+}
+
+.center {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(185, 184, 184);
+  word-wrap: break-word;
+  padding: 5px;
+}
+
+.right {
+  display: flex;
+  flex: 0.3;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(185, 184, 184);
+}
+
+.badge {
+  display: flex;
+  margin: 5px;
+  color: white;
+  border-radius: 5px;
+  background-color: blue;
+  font-size: 12px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-btn {
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+}
