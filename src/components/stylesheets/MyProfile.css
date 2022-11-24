@@ -1,0 +1,19 @@
+@import '../../App.css';
+
+.tableContainer {
+  display: grid;
+  height: 80vh;
+  grid-template-areas: "missions rockets";
+  margin: 1rem;
+  border: 1px solid crimson;
+  text-align: center;
+  background-color: var(--color-white);
+}
+
+.missions {
+  grid-area: missions;
+}
+
+.rockets {
+  grid-area: rockets;
+}
