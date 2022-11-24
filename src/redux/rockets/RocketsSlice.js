@@ -8,7 +8,7 @@ const initialState = [];
 const url = 'https://api.spacexdata.com/v3/rockets';
 
 // Async Action Creators
-const fetchRectketApi = createAsyncThunk(
+export const fetchRectketApi = createAsyncThunk(
   'rockets/fetchRectketApi',
   async () => {
     const response = await axios.get(url);
@@ -17,21 +17,41 @@ const fetchRectketApi = createAsyncThunk(
 );
 
 // Slice Reducer
-export const rocketSlice = createSlice({
+const rocketSlice = createSlice({
   name: 'rockets',
   initialState,
-  reducers: {},
+  reducers: {
+    reserveRocket: {
+      reducer: (state, action) => state.map((el) => (
+        el.rocketId === action.payload ? { ...el, rocketReserved: true } : el)),
+      prepare: (rocketId) => ({
+        payload: rocketId,
+      }),
+    },
+
+    cancelRocket: {
+      reducer: (state, action) => state.map((el) => (
+        el.rocketId === action.payload ? { ...el, rocketReserved: false } : el)),
+      prepare: (rocketId) => ({
+        payload: rocketId,
+      }),
+    },
+  },
+
   extraReducers: {
     [fetchRectketApi.fulfilled]: (state, action) => {
       const rockets = action.payload.map((el) => ({
         rocketId: el.rocket_id,
         rocketName: el.rocket_name,
-        rocketDess: el.description,
-        rocketImg: el.flickr_images,
+        rocketDesc: el.description,
+        rocketImg: el.flickr_images[0],
+        rocketReserved: true,
       }));
       return rockets;
     },
   },
 });
+
+export const { reserveRocket, cancelRocket } = rocketSlice.actions;
 
 export default rocketSlice.reducer;
