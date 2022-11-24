@@ -16,18 +16,21 @@
   justify-content: space-around;
   margin: 0 auto;
   margin-top: 10px;
+  font-weight: 700;
 }
 
 .tbody {
   display: flex;
-  justify-content: center;
-  border: 1px solid rgb(185, 184, 184);
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .left {
   display: flex;
   flex: 0.15;
   justify-content: center;
+  font-weight: 700;
+  padding: 5px;
   border: 1px solid rgb(185, 184, 184);
 }
 
@@ -35,7 +38,6 @@
   display: flex;
   flex: 1;
   align-items: center;
-  justify-content: center;
   border: 1px solid rgb(185, 184, 184);
   word-wrap: break-word;
   padding: 5px;
@@ -44,6 +46,7 @@
 .right {
   display: flex;
   flex: 0.3;
+  padding: 5px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgb(185, 184, 184);
@@ -54,9 +57,7 @@
   margin: 5px;
   color: white;
   border-radius: 5px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  background-color: #40a2b8;
+  background-color:#40a2b8 ;
   font-size: 12px;
   height: 30px;
   align-items: center;
@@ -86,7 +87,57 @@
 
 .join {
   font-size: 15px;
-  padding: 8px;
-  cursor: pointer;
+  padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    width: 98vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  .left {
+    display: flex;
+    min-width: 20vw;
+    padding: 5px;
+    justify-content: center;
+    border: 1px solid rgb(185, 184, 184);
+    font-size: 0.75rem;
+  }
+
+  .center {
+    display: flex;
+    width: 60vw;
+    align-items: center;
+    border: 1px solid rgb(185, 184, 184);
+    word-wrap: break-word;
+    padding: 5px;
+    font-size: 0.75rem;
+  }
+
+  .right {
+    display: flex;
+    width: 20vw;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+    border: 1px solid rgb(185, 184, 184);
+    font-size: 0.75rem;
+  }
+
+  .join-btn {
+    margin-top: 20px;
+  }
+
+  .badge2,
+  .badge {
+    text-align: center;
+    padding: 5px;
+  }
 }
