@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { unjoinMission, joinMission } from '../redux/missions/MissionsSlice';
-import './stylesheets/MissionCard.css';
+import { unjoinMission, joinMission } from '../../redux/missions/MissionsSlice';
+import '../stylesheets/MissionCard.css';
 
 const MissionCard = ({
   missionname, description, id, missionjoin,

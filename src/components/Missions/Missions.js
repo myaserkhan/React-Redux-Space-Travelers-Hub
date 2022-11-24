@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissionsApi } from '../redux/missions/MissionsSlice';
+import { fetchMissionsApi } from '../../redux/missions/MissionsSlice';
 import MissionCard from './MissionCard';
-import './stylesheets/MissionCard.css';
+import '../stylesheets/MissionCard.css';
 
 const Missionlist = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRectketApi } from '../redux/rockets/RocketsSlice';
+import { fetchRectketApi } from '../../redux/rockets/RocketsSlice';
 import RocketsCard from './RocketsCard';
 
 function RocketsList() {
@@ -8,7 +8,7 @@ function RocketsList() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (!rockets.length) dispatch(fetchRectketApi());
-  }, [dispatch]);
+  }, [dispatch, rockets.length]);
 
   return (
     <>
