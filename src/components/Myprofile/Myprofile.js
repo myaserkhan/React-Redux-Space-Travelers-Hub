@@ -1,10 +1,8 @@
-import '../stylesheets/MyProfile.css';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  unjoinMission,
-  selectAllmissions,
-} from '../../redux/missions/MissionsSlice';
+import '../stylesheets/MyProfile.css';
 import { cancelRocket } from '../../redux/rockets/RocketsSlice';
+import { unjoinMission, selectAllmissions } from '../../redux/missions/MissionsSlice';
 
 function Myprofile() {
   const dispatch = useDispatch();
@@ -27,24 +25,22 @@ function Myprofile() {
       <div className="missions">
         <h1>My Missions</h1>
         <div className="itemsList">
-          {!missiondat.length ? <li>There are no missions joined.</li> : null}
-          {missiondat
-            && missiondat.map((el) => (
-              <div className="listBox" key={el.missionid}>
-                <h2 className="listName">{el.missionName}</h2>
-                <button className="readMore" type="button">
-                  <a href={el.missionweblink}>Read More</a>
-                </button>
-                <button
-                  className="remBtn"
-                  type="button"
-                  id={el.missionid}
-                  onClick={cancelmissionHandler}
-                >
-                  Cancel
-                </button>
-              </div>
-            ))}
+          {!missiondat.length ? (<li>There are no missions joined.</li>) : null}
+          {missiondat && missiondat.map((el) => (
+            <div className="listBox" key={el.missionid}>
+              <h2 className="listName">
+                {el.missionName}
+              </h2>
+              <button className="readMore" type="button">
+                <a href={el.missionweblink}>
+                  Read More
+                </a>
+              </button>
+              <button className="remBtn" type="button" id={el.missionid} onClick={cancelmissionHandler}>
+                Cancel
+              </button>
+            </div>
+          ))}
         </div>
       </div>
       <div className="rockets">
