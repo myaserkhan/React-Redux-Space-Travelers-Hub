@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import './stylesheets/RocketsCard.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveRocket, cancelRocket } from '../redux/rockets/RocketsSlice';
 
 function RocketsCard({ rocket }) {
   const dispatch = useDispatch();
+
   const {
     rocketId, rocketName, rocketDesc, rocketImg, rocketReserved,
   } = rocket;
@@ -22,14 +23,13 @@ function RocketsCard({ rocket }) {
 
   return (
     <section className="rocketCard">
-      <img src={rocketImg} alt="" className="rocketImg" />
+      <img className="rocketImg" src={rocketImg} alt="" srcSet="" />
       <div className="rocketDesc">
         <h1 className="titleDesc">{rocketName}</h1>
         <p className="paraDesc">
           {rocketReserved === true && (
             <span className="rocketReserved">Reserved</span>
           )}
-          {' '}
           {rocketDesc}
         </p>
         {rocketReserved === true ? (
@@ -55,6 +55,7 @@ function RocketsCard({ rocket }) {
     </section>
   );
 }
+
 RocketsCard.propTypes = {
   rocket: PropTypes.shape({
     rocketId: PropTypes.string,
@@ -64,4 +65,5 @@ RocketsCard.propTypes = {
     rocketReserved: PropTypes.bool,
   }).isRequired,
 };
+
 export default RocketsCard;

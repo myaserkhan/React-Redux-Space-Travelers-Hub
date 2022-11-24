@@ -53,10 +53,6 @@
   bottom: 0;
 }
 
-.reserveBtn:hover {
-  background-color: var(--color-greenishblue);
-}
-
 .cancelBtn {
   background-color: var(--color-white);
   color: #6d757d;
@@ -66,6 +62,10 @@
   padding: 0.5rem 0;
   cursor: pointer;
   bottom: 0;
+}
+
+.reserveBtn:hover {
+  background-color: var(--color-greenishblue);
 }
 
 @media screen and (min-width: 768px) {
