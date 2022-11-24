@@ -32,12 +32,14 @@
 }
 
 .rocketReserved {
+  display: inline-block;
   background-color: var(--color-greenishblue);
   color: var(--color-white);
   width: fit-content;
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-size: 0.75rem;
+  margin-right: 1rem;
 }
 
 .reserveBtn {

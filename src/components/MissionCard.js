@@ -24,8 +24,8 @@ const MissionCard = ({
             {description}
           </div>
           <div className="right">
-            {missionjoin === false ? (<span className="badge">Not A Member</span>) : (<span className="badge">Active Member</span>)}
-            {missionjoin === false ? (<button className="join-btn" type="submit" id={id} onClick={missionSwitchHandler}>Join Mision</button>) : (<button className="join-btn" type="submit" id={id} onClick={unjoinswitchhandler}>Leave Mission</button>)}
+            {missionjoin === false ? (<span className="badge2">NOT A MEMBER</span>) : (<span className="badge">Active Member</span>)}
+            {missionjoin === false ? (<button className="join" type="submit" id={id} onClick={missionSwitchHandler}>Join Mision</button>) : (<button className="join-btn" type="submit" id={id} onClick={unjoinswitchhandler}>Leave Mission</button>)}
           </div>
         </div>
       </div>
