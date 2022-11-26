@@ -7,6 +7,7 @@ import userEvent from '@testing-library/user-event';
 import Missions from '../Missions';
 import store from '../../../redux/configStore';
 import App from '../../../App';
+import '@testing-library/jest-dom';
 
 // missions snapshots
 const MockMissions = () => (

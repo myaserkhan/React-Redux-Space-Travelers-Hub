@@ -5,6 +5,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import store from '../../../redux/configStore';
 import RocketsCards from '../RocketsCard';
+import '@testing-library/jest-dom';
 
 // test the rockets card
 const rocket = {

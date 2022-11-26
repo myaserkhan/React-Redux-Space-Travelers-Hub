@@ -5,6 +5,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import store from '../../../redux/configStore';
 import Missioncard from '../Missioncard';
+import '@testing-library/jest-dom';
 
 // test the mission card
 const missioncard = [

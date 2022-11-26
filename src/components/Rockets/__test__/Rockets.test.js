@@ -7,6 +7,7 @@ import userEvent from '@testing-library/user-event';
 import Rockets from '../Rockets';
 import store from '../../../redux/configStore';
 import App from '../../../App';
+import '@testing-library/jest-dom';
 
 // rockets snapshots
 const MockRockets = () => (
