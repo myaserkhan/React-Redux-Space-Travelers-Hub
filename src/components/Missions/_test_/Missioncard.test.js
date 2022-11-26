@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import store from '../../../redux/configStore';
-import Missioncard from '../Missioncard';
+import MissionCard from '../MissionCard';
 import '@testing-library/jest-dom';
 
 // test the mission card
@@ -21,7 +21,7 @@ const missioncard = [
 
 const MockMissioncard = () => (
   <Provider store={store}>
-    <Missioncard missioncard={missioncard} />
+    <MissionCard missioncard={missioncard} />
   </Provider>
 );
 
